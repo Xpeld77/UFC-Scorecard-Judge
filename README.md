@@ -5,7 +5,7 @@ A command-line application that acts as an unbiased UFC judge. This tool scrapes
 The goal of this project is to provide an objective, data-driven analysis of MMA fights, allowing users to compare a statistical scorecard against the official decisions, especially in famously controversial bouts.
 
 ## How It Works
-The application operates in three main stages:
+The application operates in four main stages:
 
 Scrape: It takes a fight details URL from UFCStats.com as input and uses the requests and BeautifulSoup libraries to fetch and parse the raw HTML of the webpage.
 
