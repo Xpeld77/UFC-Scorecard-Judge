@@ -15,6 +15,39 @@ Score: For each round, it passes the structured data to a sophisticated scoring 
 
 Display: It presents a final scorecard in the terminal, complete with a justification for why each round was scored a certain way.
 
+## Scoring Logic
+The scoring engine is designed to mirror the decision-making process of a real MMA judge, prioritizing clear dominance before analyzing a competitive round. The logic is executed in two phases:
+
+1. The 10-8 Round (Clear Dominance)
+First, the program checks for clear, overwhelming dominance. A round is scored 10-8 if any of the following high-impact conditions are met:
+
+- Multiple Knockdowns: The fighter scores two or more knockdowns.
+
+- Knockdown + Overwhelming Offense: The fighter scores a knockdown AND more than doubles their opponent's significant strike total.
+
+- Knockdown + Dominant Grappling: The fighter scores a knockdown, lands multiple takedowns, and maintains significant control time.
+
+- Massive Striking Disparity: An extreme difference in significant strikes landed (e.g., a differential of 45+ strikes).
+
+- Overwhelming Grappling Control: A fighter maintains more than 3.5 minutes (210 seconds) of control time.
+
+- Sustained Ground-and-Pound: The fighter achieves significant control time (2.5+ minutes) while also landing a high volume of ground strikes (20+ more than the opponent).
+
+2. The 10-9 Round (Competitive Edge)
+If no 10-8 conditions are met, the round is scored using a weighted point system to determine which fighter had the more effective offense. Points are awarded based on the following metrics:
+
+- Impact: Knockdowns and submission attempts are heavily weighted.
+
+- Volume: Significant strikes landed contribute the core of the striking points.
+
+- Control: Takedowns landed and total control time form the basis of the grappling score.
+
+- Efficiency (Bonus): A bonus is added for high accuracy in both significant strikes and takedowns, rewarding effective offense over wasted motion.
+
+- Ineffective Control (Penalty): To counter "lay and pray," a point penalty is applied if a fighter accumulates significant control time but gets out-struck, ensuring control is only rewarded when it's used effectively.
+
+- The fighter with the higher point total at the end of the calculation wins the round 10-9. If the points are equal, the round is scored a 10-10 draw.
+
 ## Features
 Automated Data Scraping: Fetches detailed stats for any fight on UFCStats.com with just a URL.
 
